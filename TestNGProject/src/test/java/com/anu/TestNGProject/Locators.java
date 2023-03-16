@@ -105,6 +105,134 @@ public class Locators extends Base
 		
 		
 	}
+	@Test
+	public void locatorByXpathContains()
+	{
+		driver.navigate().to("https://selenium.obsqurazone.com/check-box-demo.php");
+		driver.findElement(By.xpath("//div[contains(@class,'col-lg-3')]"));
+		driver.findElement(By.xpath("//nav[contains(@class,'navbar-expand')]"));
+		driver.findElement(By.xpath("//div[contains(@class,'page')]"));
+		driver.findElement(By.xpath("//div[contains(@class,'logo')]"));
+		driver.findElement(By.xpath("//div[contains(@id,'one')]"));
+		
+		
+	}
+	@Test
+	public void locatorByAbsoluteXpath() 
+	{
+		driver.findElement(By.xpath("/html/body/section/div/div/div[2]/div[2]/div/div[2]/form/button"));
+		
+		
+		
+		
+	}
+	@Test
+	public void locatorByXpathUsingOR()
+	{
+		driver.findElement(By.xpath("//a[@href='check-box-demo.php' or text()='Checkbox Demo']"));
+		driver.findElement(By.xpath("//label[@for='inputEmail4' or text()='Enter Message']"));
+		driver.findElement(By.xpath("//button[@id='button-one' or text()='Show Message']"));
+		driver.navigate().to("https://selenium.obsqurazone.com/radio-button-demo.php");
+		driver.findElement(By.xpath("//button[@id='button-one' or text()='Show Selected Value']"));
+		driver.findElement(By.xpath("//label[@for='inlineRadio24' or text()='45 to 60']"));
+	}
+	@Test
+	public void locatorByXpathUsingAnd()
+	{
+		driver.findElement(By.xpath("//button[@id='button-one' and @type='button' ]"));
+		driver.findElement(By.xpath("//div[@id='message-two' and @class='my-2' ]"));
+		driver.findElement(By.xpath("//a[@class='nav-link' and @id='alert-modal' ]"));
+		driver.navigate().to("https://selenium.obsqurazone.com/radio-button-demo.php");
+		driver.findElement(By.xpath("//input[@name='inlineRadioOptions' and @id='inlineRadio1']"));
+		driver.findElement(By.xpath("//label[@for='inlineRadio11' and text()='Male']"));
+	}
+	@Test
+	public void locatorByXpathStartsWith()
+	{
+		driver.findElement(By.xpath("//a[starts-with(text(),'Checkbox')]"));
+		driver.navigate().to("https://selenium.obsqurazone.com/radio-button-demo.php");
+		driver.findElement(By.xpath("//label[starts-with(text(),'19')]"));
+		driver.findElement(By.xpath("//button[starts-with(text(),'Get')]"));
+		driver.findElement(By.xpath("//a[starts-with(text(),'Radio')]"));
+	}
+	@Test
+	public void locatorByXpathUsingParentAttribute()
+	{
+		driver.findElement(By.xpath("//label[@for='inputEmail4']//parent::div[@class='form-group']"));
+		driver.navigate().to("https://selenium.obsqurazone.com/select-input.php");
+		driver.findElement(By.xpath("//option[@value='Red']//parent::select[@id='single-input-field']"));
+		driver.findElement(By.xpath("//div[@id='message-one']//parent::form[@method='POST']"));
+		driver.findElement(By.xpath("//button[@id='button-first']//parent::form[@method='POST']"));
+	}
+	@Test
+	public void locatorByXpathUsingChildAttribute()
+	{
+		driver.findElement(By.xpath("//div[@class='card']//child::div[contains(text(),'Menu')]"));
+		driver.navigate().to("https://selenium.obsqurazone.com/radio-button-demo.php");
+		driver.findElement(By.xpath("//div[@class='card-body']//child::h4[text()='Pateints Gender']"));
+		driver.navigate().to("https://selenium.obsqurazone.com/select-input.php");
+		driver.findElement(By.xpath("//div[@class='header-top']//child::div[@class='container']"));
+		driver.findElement(By.xpath("//div[contains(@class,'top-logo')]//child::a[@href='index.php']"));
+		driver.findElement(By.xpath("button[@id=\"button-one\"]//following::div[@class='example my-3']"));
+		
+		
+	}
+	@Test
+	public void locatorByXpathUsingFollowing()
+	{
+		driver.findElement(By.xpath("//button[@id='button-one']//following::div[@id='message-one']"));
+		driver.findElement(By.xpath("//button[@id='button-one']//following::div[@class='example my-3']"));
+		driver.findElement(By.xpath("//div[contains(text(),'Single')]//following::div[@id='message-two']"));
+		driver.findElement(By.xpath("//div[contains(text(),'Single')]//following::div[@class='card']"));
+		driver.findElement(By.xpath("//form[@method='POST']//following::button[@id='button-two']"));
+		driver.findElement(By.xpath("//form[@method='POST']//following::footer[@class='mt-5']"));
+	}
+	@Test
+	public void locatorByXpathUsingAncestor()
+	{
+		driver.findElement(By.xpath("//button[@id='button-one']//ancestor::form[@method='POST']"));
+		driver.findElement(By.xpath("//div[contains(text(),'Menu')]//ancestor::div[@class='card']"));
+		driver.findElement(By.xpath("//div[contains(text(),'Menu')]//ancestor::div[@class='row']"));
+		driver.findElement(By.xpath("//div[contains(text(),'Two Input')]//ancestor::div[@class='example my-3']"));
+		driver.findElement(By.xpath("//div[@class='container']//ancestor::div[@class='header-top']"));
+		driver.findElement(By.xpath("//img[@alt='logo']//ancestor::a[@href='index.php']"));
+	}
+	@Test
+	public void locatorByXpathUsingPreceding()
+	{
+		driver.findElement(By.xpath("//button[@id='button-one']//preceding::label[@for='inputEmail4']"));
+		driver.findElement(By.xpath("//div[@id='message-two']//preceding::button[@id='button-one']"));
+		driver.findElement(By.xpath("//div[@id='message-two']//preceding::div[@class='card-body']"));
+		driver.navigate().to("https://selenium.obsqurazone.com/check-box-demo.php");
+		driver.findElement(By.xpath("//input[@id='button-two']//preceding::div[contains(text(),'Multiple')]"));
+		driver.findElement(By.xpath("//input[@id='button-two']//preceding::input[@id='check-box-one']"));
+		
+	}
+	@Test
+	public void locatorByXpathUsingDescendant()
+	{
+		driver.findElement(By.xpath("//div[@class='container page']//descendant::ul[contains(@class,'list-group')]"));
+		driver.findElement(By.xpath("//li[@class='list-group-item']//descendant::a[@href='simple-form-demo.php']"));
+		driver.findElement(By.xpath("//form[@method='POST']//descendant::label[@for='inputEmail4']"));
+		driver.findElement(By.xpath("//form[@method='POST']//descendant::button[text()='Show Message']"));
+		
+	}
+	@Test
+	public void locatorByXpathUsingFollowingSibling()
+	{
+		driver.findElement(By.xpath("//label[@for='inputEmail4']//following-sibling::input[@id='single-input-field']"));
+		driver.navigate().to("https://selenium.obsqurazone.com/radio-button-demo.php");
+		driver.findElement(By.xpath("//input[@id='inlineRadio1']//following-sibling::label[@for='inlineRadio1']"));
+		driver.findElement(By.xpath("//button[@id='button-one']//following-sibling::div[@id='message-one']"));
+		driver.findElement(By.xpath("//div[contains(text(),'Group')]//following-sibling::div[@class='card-body']"));
+		driver.findElement(By.xpath("//h4[(text()='Pateints Gender')]//following-sibling::div[@id='message-two']"));
+		
+	}
+	@Test
+	public void locatorByXpathUsingSelf()
+	{
+		driver.findElement(By.xpath("//button[@id='button-one']//self::button"));
+	}
 	
 
 }
