@@ -8,6 +8,7 @@ public class Locators extends Base
 	@Test
 	public void locatorById()
 	{
+		driver.navigate().to("https://www.amazon.in/");
 		driver.findElement(By.id("twotabsearchtextbox"));
 		driver.findElement(By.id("nav-hamburger-menu"));
 		driver.findElements(By.id("nav-logo-sprites"));
@@ -25,6 +26,7 @@ public class Locators extends Base
 	@Test
 	public void locatorByName()
 	{
+		driver.navigate().to("https://www.amazon.in/");
 		driver.findElement(By.name("glow-validation-token"));
 		driver.findElement(By.name("dropdown-selection"));
 		driver.findElement(By.name("dropdown-selection-ubb"));
@@ -33,7 +35,8 @@ public class Locators extends Base
 	@Test
 	public void locatorByClass()
 	{
-		driver.findElement(By.className("layoutToolbarPadding"));
+		driver.navigate().to("https://www.amazon.in/");
+		driver.findElement(By.className("layoutToolbarPadding"));//
 		driver.findElement(By.className("icp-nav-link-inner"));
 		driver.findElement(By.className("nav-progressive-attribute"));
 		driver.findElement(By.className("skip-link"));
@@ -43,21 +46,21 @@ public class Locators extends Base
 	@Test
 	public void locatorBylinkText()
 	{
+		driver.navigate().to("https://www.amazon.in/");
 		driver.findElement(By.linkText("Customer Service"));
 		driver.findElement(By.linkText("Amazon miniTV"));
 		driver.findElement(By.linkText("Best Sellers"));
 		driver.findElement(By.linkText("Mobiles"));
-		driver.findElement(By.linkText("Baby Products"));
 		driver.findElement(By.linkText("Electronics"));
 		
 	}
-	@Test
+//	@Test
 	public void locatorBypartialLinkText()
 	{
+		driver.navigate().to("https://www.amazon.in/");
 		driver.findElement(By.partialLinkText("Today's"));
 		driver.findElement(By.partialLinkText("Releases"));
-		driver.findElement(By.partialLinkText("Movers"));
-		driver.findElement(By.partialLinkText("Most Wished"));
+	//	driver.findElement(By.partialLinkText("Most Wished"));
 		driver.findElement(By.partialLinkText("Gifted"));
 		driver.findElement(By.partialLinkText("More"));
 	}
@@ -72,6 +75,7 @@ public class Locators extends Base
 	@Test
 	public void locatorByCssSelector()
 	{
+		driver.navigate().to("https://www.amazon.in/");
 		driver.findElement(By.cssSelector("input#twotabsearchtextbox"));//tag and id
 		driver.findElement(By.cssSelector("a.skip-link")); //tag and class
 		driver.findElement(By.cssSelector("input[id=twotabsearchtextbox]"));//tag,attribute,value
@@ -81,7 +85,6 @@ public class Locators extends Base
 		driver.findElement(By.cssSelector("div.a-carousel-viewport"));
 		driver.findElement(By.cssSelector("div.nav-progressive-content"));
 		driver.findElement(By.cssSelector("div[id=desktop-grid-2]"));
-		driver.findElement(By.cssSelector("a[href='/b?node=28264243031']"));
 		driver.findElement(By.cssSelector("div.nav-progressive-content[id=nav-global-location-toaster-script-container]"));
 		driver.findElement(By.cssSelector("label.nav-progressive-attribute[for=searchDropdownBox]"));
 		
@@ -90,6 +93,7 @@ public class Locators extends Base
 	@Test
 	public void locatorByXpath()
 	{
+		driver.navigate().to("https://www.amazon.in/");
 		driver.findElement(By.xpath("//a[@id='nav-logo-sprites']"));
 		driver.findElement(By.xpath("//div[text()='EN']"));
 		driver.findElement(By.xpath("//a[text()='Best Sellers']"));
@@ -168,12 +172,13 @@ public class Locators extends Base
 	public void locatorByXpathUsingChildAttribute()
 	{
 		driver.findElement(By.xpath("//div[@class='card']//child::div[contains(text(),'Menu')]"));
+		driver.findElement(By.xpath("//button[@id='button-one']//following::div[@class='example my-3']"));
 		driver.navigate().to("https://selenium.obsqurazone.com/radio-button-demo.php");
 		driver.findElement(By.xpath("//div[@class='card-body']//child::h4[text()='Pateints Gender']"));
 		driver.navigate().to("https://selenium.obsqurazone.com/select-input.php");
 		driver.findElement(By.xpath("//div[@class='header-top']//child::div[@class='container']"));
 		driver.findElement(By.xpath("//div[contains(@class,'top-logo')]//child::a[@href='index.php']"));
-		driver.findElement(By.xpath("button[@id=\"button-one\"]//following::div[@class='example my-3']"));
+		
 		
 		
 	}

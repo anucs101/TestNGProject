@@ -71,8 +71,10 @@ public class WebElementCommands extends Base
 		Dimension sizeofShowMessagebutton = showMessageButton.getSize();
 		int height = sizeofShowMessagebutton.getHeight();
 		int width = sizeofShowMessagebutton.getWidth();
-		List<WebElement> inputformCategories = driver.findElements(By.xpath("//li[@class='list-group-item']"));
+		
 	}
+	
+	
 	@Test
 	public void verifyFontColorOfShowmessagebutton()
 	{
@@ -80,6 +82,7 @@ public class WebElementCommands extends Base
 		WebElement showMessageButton = driver.findElement(By.xpath("//button[@id='button-one']"));
 		String fontColor = showMessageButton.getCssValue("color");
 		assertEquals(expectedFontColor,fontColor,"font color is different from expected value");
+		
 	}
 	@Test
 	public void verifyFontSizeofShowmessagebutton()

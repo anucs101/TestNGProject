@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+	<parameter name="author" value="anu"/>
+	<parameter name="searchkey" value="india"/>
+    <classes>
+		<class name = "com.anu.TestNGProject.DataProvider">
+			<methods>
+				<exclude name="testcase"/>
+			</methods>
+			
+		</class>
+  <!--    <class name="com.anu.TestNGProject.RadioButtonDemo"/>
+      <class name="com.anu.TestNGProject.ActionClass"/>
+      <class name="com.anu.TestNGProject.AlertsandPopUps"/>
+      <class name="com.anu.TestNGProject.SelectInput"/>
+      <class name="com.anu.TestNGProject.GetPageSourceCommand"/>
+      <class name="com.anu.TestNGProject.WebElementCommands"/>
+      <class name="com.anu.TestNGProject.LocatorsbydifferntCommands"/>
+      <class name="com.anu.TestNGProject.FindElements"/>
+      <class name="com.anu.TestNGProject.TestNGAssertions"/>
+      <class name="com.anu.TestNGProject.GetUrlCommand"/>
+      <class name="com.anu.TestNGProject.BrowserCommands"/>
+      <class name="com.anu.TestNGProject.JavaScriptExecuter"/>
+      <class name="com.anu.TestNGProject.CheckBoxDemo"/>
+      <class name="com.anu.TestNGProject.Locators"/>
+      <class name="com.anu.TestNGProject.GetNavigateCommands"/>
+      <class name="com.anu.TestNGProject.WindowHandle"/>
+      <class name="com.anu.TestNGProject.TestingObsqura"/>
+      <class name="com.anu.TestNGProject.TestNGAnnotations"/><exclude
+      <class name="com.anu.TestNGProject.DynamicTable"/>--> 
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
